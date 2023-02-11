@@ -1,6 +1,8 @@
 //Enabled namespaces: allows use throughout application
 global using RPG_Roster.Models;
 global using RPG_Roster.Services.CharacterService;
+global using RPG_Roster.Dtos.Character;
+global using AutoMapper;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,6 +12,7 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+builder.Services.AddAutoMapper(typeof(Program).Assembly);
 //This tells the service which controller to use
 builder.Services.AddScoped<ICharacterService, CharacterService>();
 
