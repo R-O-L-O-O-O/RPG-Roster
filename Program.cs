@@ -1,3 +1,7 @@
+//Enabled namespaces: allows use throughout application
+global using RPG_Roster.Models;
+global using RPG_Roster.Services.CharacterService;
+
 var builder = WebApplication.CreateBuilder(args);
 
 // Add services to the container.
@@ -6,6 +10,8 @@ builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
+//This tells the service which controller to use
+builder.Services.AddScoped<ICharacterService, CharacterService>();
 
 var app = builder.Build();
 
