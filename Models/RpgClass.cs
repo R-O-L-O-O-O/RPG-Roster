@@ -10,5 +10,6 @@ namespace RPG_Roster.Models
         Cleric = 3,
         Soldier = 4,
         Fighter = 5,
+        Assassin = 6,
     }
 }
